@@ -1,3 +1,9 @@
+// Imagenes principales del sitio
+import { StaticImageData } from "next/image";
+import banner1 from "@/assets/banners/Banner-1.png";
+import banner2 from "@/assets/banners/Banner-2.png";
+import banner3 from "@/assets/banners/Banner-3.png";
+
 // Datos principales del sitio - edita aqui los textos e iconos de la pagina
 import {
   Clock,
@@ -18,6 +24,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+
 // Interfaces que definen la estructura de cada tipo de dato
 export interface Brand {
   name: string;
@@ -34,6 +41,7 @@ export interface Banner {
   id: number;
   title: string;
   subtitle: string;
+  image: StaticImageData;
 }
 
 export interface Feature {
@@ -186,18 +194,21 @@ export const siteData: SiteData = {
       title: "Especialistas en Transportes del Bajío",
       subtitle:
         "Soluciones integrales en logística y transporte para mover su operación con seguridad y eficiencia en todo México.",
+      image: banner1,
     },
     {
       id: 2,
       title: "Eficiencia que mantiene su operación en marcha",
       subtitle:
         "Coordinamos cada envío con precisión para cumplir tiempos y optimizar recursos.",
+      image: banner2,
     },
     {
       id: 3,
       title: "Control y confianza en cada traslado",
       subtitle:
         "Monitoreo constante y atención personalizada en cada etapa del proceso.",
+      image: banner3,
     },
   ],
   features: [

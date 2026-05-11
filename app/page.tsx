@@ -1,15 +1,13 @@
-import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
-
-// Carga diferida (lazy) de secciones para mejorar rendimiento
-const Hero = dynamic(() => import("@/components/Hero"));
-const About = dynamic(() => import("@/components/About"));
-const LogisticsSolutions = dynamic(() => import("@/components/LogisticsSolutions"));
-const Services = dynamic(() => import("@/components/Services"));
-const ClientsAndSectors = dynamic(() => import("@/components/ClientsAndSectors"));
-const Workflow = dynamic(() => import("@/components/Workflow"));
-const Contact = dynamic(() => import("@/components/Contact"));
-const Footer = dynamic(() => import("@/components/Footer"));
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import LogisticsSolutions from "@/components/LogisticsSolutions";
+import Services from "@/components/Services";
+import ClientsAndSectors from "@/components/ClientsAndSectors";
+import Workflow from "@/components/Workflow";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function Home() {
   return (
@@ -25,6 +23,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }
