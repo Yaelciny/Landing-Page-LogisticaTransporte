@@ -34,7 +34,7 @@ export default function Workflow() {
         {/* Timeline de pasos */}
         <div className="relative">
           {/* Linea conectora (solo desktop) */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-border -translate-y-1/2 z-0"></div>
+          <div className="hidden md:block absolute top-[35px] left-0 w-full h-1 bg-border -translate-y-1/2 z-0"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative z-10">
             {siteData.workflow.steps.map((step, idx) => (
