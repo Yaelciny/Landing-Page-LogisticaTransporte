@@ -104,18 +104,23 @@ export default function Contact() {
             </a>
           </motion.div>
 
-          {/* Placeholder del mapa */}
+          {/* Mapa */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="h-[400px] lg:h-auto bg-border rounded-3xl overflow-hidden border border-border relative"
+            className="h-[400px] lg:h-auto rounded-3xl overflow-hidden border border-border"
           >
-            <div className="absolute inset-0 flex items-center justify-center flex-col text-muted-foreground bg-muted">
-              <MapPin size={48} className="mb-4 opacity-50" />
-              <p className="font-medium">{siteData.contact.mapPlaceholder}</p>
-              <p className="text-sm">(Insertar iframe aqui)</p>
-            </div>
+            <iframe
+              src={siteData.contact.mapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: "400px", width: "100%" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación de Especialistas en Transportes del Bajío"
+            />
           </motion.div>
         </div>
       </div>

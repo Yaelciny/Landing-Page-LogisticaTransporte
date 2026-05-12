@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PackageSearch, Settings, ArrowRight, Truck } from "lucide-react";
+import { Settings, ArrowRight, Truck, ImageIcon } from "lucide-react";
 import { siteData } from "@/data/nat";
 
 export default function Services() {
@@ -32,8 +32,8 @@ export default function Services() {
           </motion.h3>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Columna: Logistica (fondo claro) */}
+        {/* Columna: Logistica (fondo claro) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,12 +64,12 @@ export default function Services() {
             </ul>
           </motion.div>
 
-          {/* Columna: Transporte (fondo oscuro) */}
+          {/* Columna: Transporte info (fondo oscuro) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-foreground text-background rounded-3xl p-8 md:p-12"
+            className="bg-foreground text-background rounded-3xl p-8 md:p-12 flex flex-col justify-center"
           >
             <div className="flex items-center gap-4 mb-8">
               <div className="p-4 bg-background rounded-xl">
@@ -79,29 +79,48 @@ export default function Services() {
                 {siteData.services.transporte.title}
               </h4>
             </div>
-            <p className="text-background/70 mb-8 text-lg">
+            <p className="text-background/70 mb-6 text-lg">
               {siteData.services.transporte.description}
             </p>
-            <div className="grid gap-6">
-              {siteData.services.transporte.types.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex gap-4 p-4 rounded-xl hover:bg-background/10 transition-colors border border-transparent hover:border-background/20"
-                >
-                  <div className="mt-1">
-                    <PackageSearch size={24} className="text-background" />
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-background text-lg mb-1">
-                      {item.type}
-                    </h5>
-                    <p className="text-background/60">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="text-background/50 text-sm">
+              Contamos con unidades para cada tipo de carga. Explora nuestras opciones a continuación.
+            </p>
           </motion.div>
         </div>
+
+        {/* Galeria de tipos de transporte con placeholders de imagen */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {siteData.services.transporte.types.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group overflow-hidden rounded-2xl border border-border hover:border-primary transition-all hover:-translate-y-1 hover:shadow-lg"
+              >
+                {/* Placeholder de imagen */}
+                <div className="relative h-56 bg-muted border-b border-border flex flex-col items-center justify-center gap-3">
+                  <ImageIcon size={48} className="text-muted-foreground/40" />
+                  <p className="text-sm text-muted-foreground/60 font-medium">Imagen: {item.type}</p>
+                </div>
+                {/* Texto */}
+                <div className="p-6 bg-background">
+                  <h5 className="font-bold text-foreground text-xl mb-1">
+                    {item.type}
+                  </h5>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

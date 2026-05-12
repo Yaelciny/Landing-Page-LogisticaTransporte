@@ -4,6 +4,8 @@ import banner1 from "@/assets/banners/Banner-1.png";
 import banner2 from "@/assets/banners/Banner-2.png";
 import banner3 from "@/assets/banners/Banner-3.png";
 
+
+
 // Datos principales del sitio - edita aqui los textos e iconos de la pagina
 import {
   Clock,
@@ -138,6 +140,7 @@ export interface ContactInfo {
   email: string;
   whatsapp: string;
   mapPlaceholder: string;
+  mapUrl: string;
 }
 
 export interface FooterData {
@@ -405,6 +408,8 @@ export const siteData: SiteData = {
     email: "ejemplo@gmail.com",
     whatsapp: "#",
     mapPlaceholder: "Mapa de Google Maps",
+    mapUrl:
+      "https://www.google.com/maps?q=México&output=embed",
   },
   footer: {
     copyright: `© ${new Date().getFullYear()} Especialistas en Transportes del Bajío. Todos los derechos reservados.`,

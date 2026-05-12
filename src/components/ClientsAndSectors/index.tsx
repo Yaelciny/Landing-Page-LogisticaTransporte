@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { siteData } from "@/data/nat";
+import { ImageIcon } from "lucide-react";
 
 export default function ClientsAndSectors() {
   return (
@@ -28,8 +29,8 @@ export default function ClientsAndSectors() {
           </motion.p>
         </div>
 
-        {/* Tarjetas de sectores */}
-        <div className="flex flex-wrap justify-center gap-6">
+        {/* Tarjetas de sectores con placeholders de imagen */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {siteData.clients.sectors.map((sector, idx) => {
             const Icon = sector.icon;
             return (
@@ -39,14 +40,23 @@ export default function ClientsAndSectors() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-muted border border-border p-8 rounded-2xl flex flex-col items-center text-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:border-primary hover:shadow-md transition-all group hover:-translate-y-1"
+                className="group overflow-hidden rounded-2xl border border-border hover:border-primary hover:shadow-lg transition-all hover:-translate-y-1"
               >
-                <div className="mb-4 text-primary group-hover:scale-110 transition-transform">
-                  <Icon size={32} />
+                {/* Placeholder de imagen */}
+                <div className="relative h-48 bg-muted border-b border-border flex flex-col items-center justify-center gap-3">
+                  <ImageIcon size={48} className="text-muted-foreground/40" />
+                  <p className="text-sm text-muted-foreground/60 font-medium">Imagen: {sector.name}</p>
                 </div>
-                <h3 className="text-lg font-bold text-foreground">
-                  {sector.name}
-                </h3>
+
+                {/* Contenido */}
+                <div className="p-6 bg-background flex items-center gap-4">
+                  <div className="p-3 bg-muted rounded-xl border border-border shrink-0 group-hover:scale-110 transition-transform icon-container-base">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground leading-tight">
+                    {sector.name}
+                  </h3>
+                </div>
               </motion.div>
             );
           })}
