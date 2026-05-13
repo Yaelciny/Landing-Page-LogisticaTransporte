@@ -40,7 +40,7 @@ export default function ClientsAndSectors() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group overflow-hidden rounded-2xl border border-border hover:border-primary hover:shadow-lg transition-all hover:-translate-y-1"
+                className="group overflow-hidden rounded-2xl border border-border hover:shadow-lg transition-all hover:-translate-y-1"
               >
                 {/* Placeholder de imagen */}
                 <div className="relative h-48 bg-muted border-b border-border flex flex-col items-center justify-center gap-3">

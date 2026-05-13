@@ -103,7 +103,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group overflow-hidden rounded-2xl border border-border hover:border-primary transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="group overflow-hidden rounded-2xl border border-border transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 {/* Placeholder de imagen */}
                 <div className="relative h-56 bg-muted border-b border-border flex flex-col items-center justify-center gap-3">

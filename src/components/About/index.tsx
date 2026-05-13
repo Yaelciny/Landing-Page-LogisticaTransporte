@@ -26,7 +26,6 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {siteData.about.cards.map((card, idx) => {
             const Icon = card.icon;
-            const isDark = idx === 1; // La tarjeta del medio tiene fondo oscuro
             return (
               <motion.div
                 key={card.id}
@@ -34,35 +33,22 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * (idx + 1) }}
-                className={`p-8 rounded-2xl transition-all group hover:-translate-y-1 ${
-                  isDark
-                    ? "bg-foreground text-background border border-foreground hover:shadow-lg"
-                    : "bg-muted border border-border hover:shadow-md"
-                }`}
+                className="p-8 rounded-2xl transition-all group hover:-translate-y-1 bg-muted border border-border hover:shadow-md"
               >
                 <div
-                  className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${
-                    isDark
-                      ? "bg-background text-foreground"
-                      : "bg-background border border-border icon-container-base"
-                  }`}
-                >
+                  className="w-14 h-14 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform bg-background border border-border icon-container-base">
                   <Icon
                     size={28}
-                    className={isDark ? "text-foreground" : ""}
+                    className=""
                   />
                 </div>
                 <h3
-                  className={`text-2xl font-bold mb-4 ${
-                    isDark ? "text-background" : "text-foreground"
-                  }`}
+                  className="text-2xl font-bold mb-4 text-foreground"
                 >
                   {card.title}
                 </h3>
                 <p
-                  className={`leading-relaxed ${
-                    isDark ? "text-background/80" : "text-muted-foreground"
-                  }`}
+                  className={`leading-relaxed text-muted-foreground`}
                 >
                   {card.description}
                 </p>
