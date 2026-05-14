@@ -3,6 +3,11 @@ import { StaticImageData } from "next/image";
 import banner1 from "@/assets/banners/Banner-1.png";
 import banner2 from "@/assets/banners/Banner-2.png";
 import banner3 from "@/assets/banners/Banner-3.png";
+import servicio1 from "@/assets/servicios/caja-seca.png";
+import servicio2 from "@/assets/servicios/carga-especializada.png";
+import servicio3 from "@/assets/servicios/plataformas.png";
+import servicio4 from "@/assets/servicios/portacontenedores.png";
+import servicio5 from "@/assets/servicios/torton.png";
 
 
 
@@ -89,6 +94,7 @@ export interface TransportType {
   id: number;
   type: string;
   description: string;
+  image: StaticImageData;
 }
 
 export interface ServicesSection {
@@ -325,26 +331,31 @@ export const siteData: SiteData = {
           id: 1,
           type: "Caja Seca",
           description: "Transporte de mercancía general con protección total.",
+          image: servicio1
         },
         {
           id: 2,
           type: "Torton",
           description: "Solución para cargas de mayor volumen.",
+          image: servicio5
         },
         {
           id: 3,
           type: "Plataforma",
           description: "Ideal para maquinaria y estructuras.",
+          image: servicio3
         },
         {
           id: 4,
           type: "Portacontenedores",
           description: "Traslado eficiente desde puerto a destino.",
+          image: servicio4
         },
         {
           id: 5,
           type: "Carga Especializada",
           description: "Manejo de materiales delicados o de cuidado especial.",
+          image: servicio2
         },
       ],
     },

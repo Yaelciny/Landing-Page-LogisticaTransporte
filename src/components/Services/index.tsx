@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Settings, ArrowRight, Truck, ImageIcon } from "lucide-react";
+import { Settings, ArrowRight, Truck } from "lucide-react";
 import { siteData } from "@/data/nat";
+import Image from "next/image";
+
 
 export default function Services() {
   return (
@@ -103,19 +105,21 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group overflow-hidden rounded-2xl border border-border transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="relative h-80 group overflow-hidden rounded-2xl border border-border transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 {/* Placeholder de imagen */}
-                <div className="relative h-56 bg-muted border-b border-border flex flex-col items-center justify-center gap-3">
-                  <ImageIcon size={48} className="text-muted-foreground/40" />
-                  <p className="text-sm text-muted-foreground/60 font-medium">Imagen: {item.type}</p>
-                </div>
-                {/* Texto */}
-                <div className="p-6 bg-background">
-                  <h5 className="font-bold text-foreground text-xl mb-1">
-                    {item.type}
-                  </h5>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                <Image
+                  src={item.image}
+                  alt={item.type}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                {/* Overlay oscuro degradado para legibilidad del texto */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-white font-semibold text-lg">{item.type}</h3>
+                  <p className="text-white/70 text-sm">{item.description}</p>
                 </div>
               </motion.div>
             ))}

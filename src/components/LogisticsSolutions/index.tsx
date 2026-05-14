@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { siteData } from "@/data/nat";
-import { ImageIcon } from "lucide-react";
+import Image from "next/image";
+import gestionLogistica from "@/assets/logistica/gestion-logistica.png"
 
 export default function LogisticsSolutions() {
   return (
@@ -31,10 +32,15 @@ export default function LogisticsSolutions() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative h-64 md:h-80 rounded-2xl overflow-hidden border-2 border-dashed border-border bg-background flex flex-col items-center justify-center gap-3"
+              className="relative h-64 md:h-80 rounded-4xl overflow-hidden border-dashed flex flex-col items-center justify-center gap-3 hover:scale-105 transition-transform duration-500"
             >
-              <ImageIcon size={56} className="text-muted-foreground/40" />
-              <p className="text-base text-muted-foreground/60 font-medium">Imagen: Centro de operaciones logísticas</p>
+              <Image
+                src={gestionLogistica}
+                alt="Centro de operaciones logísticas"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover object-center"
+              />
             </motion.div>
           </motion.div>
 
