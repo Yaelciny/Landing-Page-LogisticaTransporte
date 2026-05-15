@@ -20,7 +20,7 @@ export default function Footer() {
                 <Truck size={24} />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-lg leading-tight uppercase tracking-wider text-background">
+                <span className="font-bold text-sm leading-tight uppercase tracking-wider text-background">
                   {siteData.brand.name}
                 </span>
                 <span className="text-xs tracking-widest uppercase text-background/60">

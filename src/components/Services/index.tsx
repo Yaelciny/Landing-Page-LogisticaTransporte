@@ -116,7 +116,7 @@ export default function Services() {
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {/* Overlay oscuro degradado para legibilidad del texto */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-white font-semibold text-lg">{item.type}</h3>
                   <p className="text-white/70 text-sm">{item.description}</p>

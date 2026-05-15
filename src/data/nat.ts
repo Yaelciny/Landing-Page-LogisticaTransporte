@@ -8,6 +8,11 @@ import servicio2 from "@/assets/servicios/carga-especializada.png";
 import servicio3 from "@/assets/servicios/plataformas.png";
 import servicio4 from "@/assets/servicios/portacontenedores.png";
 import servicio5 from "@/assets/servicios/torton.png";
+import sector1 from "@/assets/sectores/Distribuidora.png";
+import sector2 from "@/assets/sectores/Industrial.png";
+import sector3 from "@/assets/sectores/Comercializadora.png";
+import sector4 from "@/assets/sectores/Logistica-fletes.png";
+import sector5 from "@/assets/sectores/transporte.png";
 
 
 
@@ -116,6 +121,7 @@ export interface Sector {
   id: number;
   name: string;
   icon: LucideIcon;
+  image: StaticImageData;
 }
 
 export interface ClientsSection {
@@ -175,7 +181,7 @@ export interface SiteData {
 // === DATOS EDITABLES ===
 // Cambia aqui los textos, enlaces, telefonos, etc. de toda la pagina
 export const brand: Brand = {
-  name: "Transportes",
+  name: "Especialistas en Transportes",
   suffix: "Del Bajío",
   full: "Especialistas en Transportes del Bajío",
 };
@@ -365,11 +371,36 @@ export const siteData: SiteData = {
     description:
       "Nuestra versatilidad nos permite adaptarnos a las exigencias de diversos sectores, garantizando resultados óptimos para cada cliente.",
     sectors: [
-      { id: 1, name: "Empresas industriales", icon: Factory },
-      { id: 2, name: "Distribuidores", icon: Store },
-      { id: 3, name: "Comercializadoras", icon: ShoppingCart },
-      { id: 4, name: "Empresas de logística y fletes", icon: Globe2 },
-      { id: 5, name: "Requerimientos de transporte especializado", icon: Briefcase },
+      {
+        id: 1,
+        name: "Empresas industriales",
+        icon: Factory,
+        image: sector2
+      },
+      {
+        id: 2,
+        name: "Distribuidores",
+        icon: Store,
+        image: sector1
+      },
+      {
+        id: 3,
+        name: "Comercializadoras",
+        icon: ShoppingCart,
+        image: sector3
+      },
+      {
+        id: 4,
+        name: "Empresas de logística y fletes",
+        icon: Globe2,
+        image: sector4
+      },
+      {
+        id: 5,
+        name: "Requerimientos de transporte especializado",
+        icon: Briefcase,
+        image: sector5
+      },
     ],
   },
   workflow: {

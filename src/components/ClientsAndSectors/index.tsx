@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { siteData } from "@/data/nat";
-import { ImageIcon } from "lucide-react";
+import Image from "next/image";
 
 export default function ClientsAndSectors() {
   return (
@@ -40,22 +40,19 @@ export default function ClientsAndSectors() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group overflow-hidden rounded-2xl border border-border hover:shadow-lg transition-all hover:-translate-y-1"
+                className="relative h-80 group overflow-hidden rounded-2xl border border-border transition-all hover:-translate-y-1 hover:shadow-lg"
               >
-                {/* Placeholder de imagen */}
-                <div className="relative h-48 bg-muted border-b border-border flex flex-col items-center justify-center gap-3">
-                  <ImageIcon size={48} className="text-muted-foreground/40" />
-                  <p className="text-sm text-muted-foreground/60 font-medium">Imagen: {sector.name}</p>
-                </div>
-
-                {/* Contenido */}
-                <div className="p-6 bg-background flex items-center gap-4">
-                  <div className="p-3 bg-muted rounded-xl border border-border shrink-0 group-hover:scale-110 transition-transform icon-container-base">
-                    <Icon size={24} />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground leading-tight">
-                    {sector.name}
-                  </h3>
+                <Image
+                  src={sector.image}
+                  alt={sector.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                {/* Overlay oscuro degradado para legibilidad del texto */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-white font-semibold text-lg">{sector.name}</h3>
                 </div>
               </motion.div>
             );

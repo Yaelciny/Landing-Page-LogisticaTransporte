@@ -39,7 +39,7 @@ export default function Navbar() {
                 <Truck size={24} />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-lg leading-tight uppercase tracking-wider text-foreground">
+                <span className="font-bold text-sm sm:text-md leading-tight uppercase tracking-wider text-foreground">
                   {siteData.brand.name}
                 </span>
                 <span className="text-xs tracking-widest uppercase text-muted-foreground">
