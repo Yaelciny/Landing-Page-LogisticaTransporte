@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { siteData } from "@/data/nat";
 import Image from "next/image";
-import gestionLogistica from "@/assets/logistica/gestion-logistica.png"
+import gestionLogistica from "@/assets/logistica/gestion-logistica.webp"
 
 export default function LogisticsSolutions() {
   return (

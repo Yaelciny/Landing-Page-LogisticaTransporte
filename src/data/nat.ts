@@ -1,18 +1,18 @@
 // Imagenes principales del sitio
 import { StaticImageData } from "next/image";
-import banner1 from "@/assets/banners/Banner-1.png";
-import banner2 from "@/assets/banners/Banner-2.png";
-import banner3 from "@/assets/banners/Banner-3.png";
-import servicio1 from "@/assets/servicios/caja-seca.png";
-import servicio2 from "@/assets/servicios/carga-especializada.png";
-import servicio3 from "@/assets/servicios/plataformas.png";
-import servicio4 from "@/assets/servicios/portacontenedores.png";
-import servicio5 from "@/assets/servicios/torton.png";
-import sector1 from "@/assets/sectores/Distribuidora.png";
-import sector2 from "@/assets/sectores/Industrial.png";
-import sector3 from "@/assets/sectores/Comercializadora.png";
-import sector4 from "@/assets/sectores/Logistica-fletes.png";
-import sector5 from "@/assets/sectores/transporte.png";
+import banner1 from "@/assets/banners/Banner-1.webp";
+import banner2 from "@/assets/banners/Banner-2.webp";
+import banner3 from "@/assets/banners/Banner-3.webp";
+import servicio1 from "@/assets/servicios/caja-seca.webp";
+import servicio2 from "@/assets/servicios/carga-especializada.webp";
+import servicio3 from "@/assets/servicios/plataformas.webp";
+import servicio4 from "@/assets/servicios/portacontenedores.webp";
+import servicio5 from "@/assets/servicios/torton.webp";
+import sector1 from "@/assets/sectores/Distribuidora.webp";
+import sector2 from "@/assets/sectores/Industrial.webp";
+import sector3 from "@/assets/sectores/Comercializadora.webp";
+import sector4 from "@/assets/sectores/Logistica-fletes.webp";
+import sector5 from "@/assets/sectores/transporte.webp";
 
 // Datos principales del sitio - edita aqui los textos e iconos de la pagina
 import {
