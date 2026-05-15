@@ -14,8 +14,6 @@ import sector3 from "@/assets/sectores/Comercializadora.png";
 import sector4 from "@/assets/sectores/Logistica-fletes.png";
 import sector5 from "@/assets/sectores/transporte.png";
 
-
-
 // Datos principales del sitio - edita aqui los textos e iconos de la pagina
 import {
   Clock,
