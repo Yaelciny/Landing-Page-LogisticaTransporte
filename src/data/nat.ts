@@ -13,6 +13,8 @@ import sector2 from "@/assets/sectores/Industrial.webp";
 import sector3 from "@/assets/sectores/Comercializadora.webp";
 import sector4 from "@/assets/sectores/Logistica-fletes.webp";
 import sector5 from "@/assets/sectores/transporte.webp";
+import logo from "@/assets/logo/logo.png"
+
 
 // Datos principales del sitio - edita aqui los textos e iconos de la pagina
 import {
@@ -159,6 +161,7 @@ export interface FooterData {
 }
 
 export interface SiteData {
+  logo: StaticImageData;
   brand: Brand;
   siteName: string;
   siteDescription: string;
@@ -196,6 +199,7 @@ export const navLinks: NavLink[] = [
 
 // Objeto principal que agrupa todos los datos del sitio
 export const siteData: SiteData = {
+  logo,
   brand,
   siteName: brand.full,
   siteDescription:

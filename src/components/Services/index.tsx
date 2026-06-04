@@ -43,7 +43,7 @@ export default function Services() {
             className="bg-muted rounded-3xl p-8 md:p-12 border border-border"
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className="p-4 bg-background border border-border rounded-xl icon-container-base">
+              <div className="p-4 rounded-xl border" style={{ backgroundColor: '#ff5e0c1a', borderColor: '#ff5e0c33', color: '#ff5e0c' }}>
                 <Settings size={32} />
               </div>
               <h4 className="text-3xl font-bold text-foreground">
@@ -58,7 +58,8 @@ export default function Services() {
                 <li key={idx} className="flex items-start gap-3">
                   <ArrowRight
                     size={20}
-                    className="text-primary shrink-0 mt-1"
+                    className="shrink-0 mt-1"
+                    style={{ color: '#ff5e0c' }}
                   />
                   <span className="text-foreground/80 text-lg">{item}</span>
                 </li>
@@ -71,8 +72,10 @@ export default function Services() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-foreground text-background rounded-3xl p-8 md:p-12 flex flex-col justify-center"
+            className="bg-foreground text-background rounded-3xl p-8 md:p-12 flex flex-col justify-center relative overflow-hidden"
           >
+            {/* Subtle orange accent line at top */}
+            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, #ff5e0c, #7a7a7a, transparent)' }} />
             <div className="flex items-center gap-4 mb-8">
               <div className="p-4 bg-background rounded-xl">
                 <Truck size={32} className="text-foreground" />

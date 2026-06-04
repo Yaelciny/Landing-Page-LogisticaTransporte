@@ -33,13 +33,17 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * (idx + 1) }}
-                className="p-8 rounded-2xl transition-all group hover:-translate-y-1 bg-muted border border-border hover:shadow-md"
+                className="p-8 rounded-2xl transition-all group hover:-translate-y-1 bg-muted border border-border hover:shadow-md hover:border-l-4"
+                style={{ '--hover-border': '#ff5e0c' } as React.CSSProperties}
+                onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = '#ff5e0c')}
+                onMouseLeave={(e) => (e.currentTarget.style.borderLeftColor = '')}
               >
                 <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform bg-background border border-border icon-container-base">
+                  className="w-14 h-14 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border"
+                  style={{ backgroundColor: '#ff5e0c1a', borderColor: '#ff5e0c33', color: '#ff5e0c' }}
+                >
                   <Icon
                     size={28}
-                    className=""
                   />
                 </div>
                 <h3

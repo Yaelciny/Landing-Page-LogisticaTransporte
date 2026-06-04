@@ -77,7 +77,10 @@ export default function HeroCarousel() {
                   .getElementById("contacto")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="bg-primary hover:bg-primary/90 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg transition-all hover:scale-105 hover:shadow-primary active:scale-95"
+              className="text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg transition-all hover:scale-105 active:scale-95"
+              style={{ backgroundColor: '#ff5e0c', boxShadow: '0 8px 32px -8px rgba(255,94,12,0.4)' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e65400'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ff5e0c'}
             >
               Cotizar ahora
             </button>
@@ -108,9 +111,10 @@ export default function HeroCarousel() {
             key={i}
             onClick={() => setCurrent(i)}
             className={`rounded-full transition-all duration-300 ${i === current
-              ? "bg-primary w-8 sm:w-10 h-2.5 sm:h-3"
+              ? "w-8 sm:w-10 h-2.5 sm:h-3"
               : "bg-white/40 hover:bg-white/60 w-2.5 sm:w-3 h-2.5 sm:h-3"
               }`}
+            style={i === current ? { backgroundColor: '#ff5e0c' } : undefined}
             aria-label={`Ir al banner ${i + 1}`}
           />
         ))}

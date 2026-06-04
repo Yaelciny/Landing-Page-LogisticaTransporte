@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteData } from "@/data/nat";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { Menu, X, Truck } from "lucide-react";
 
 export default function Navbar() {
@@ -35,16 +36,15 @@ export default function Navbar() {
                 handleNav("#inicio");
               }}
             >
-              <div className="p-2 rounded-lg bg-primary text-primary-foreground group-hover:scale-105 transition-transform">
-                <Truck size={24} />
-              </div>
               <div className="flex flex-col">
-                <span className="font-bold text-sm sm:text-md leading-tight uppercase tracking-wider text-foreground">
-                  {siteData.brand.name}
-                </span>
-                <span className="text-xs tracking-widest uppercase text-muted-foreground">
-                  {siteData.brand.suffix}
-                </span>
+                <Image
+                  src={siteData.logo}
+                  alt={siteData.brand.name}
+                  width={100}
+                  height={100}
+                  priority
+                  className="object-contain"
+                />
               </div>
             </motion.a>
 
@@ -64,7 +64,7 @@ export default function Navbar() {
                   transition={{ delay: index * 0.1 }}
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: "#ff5e0c" }} />
                 </motion.a>
               ))}
             </nav>
@@ -73,7 +73,8 @@ export default function Navbar() {
               {/* Boton CTA - solo desktop */}
               <Button
                 variant="default"
-                className="hidden lg:flex"
+                className="hidden lg:flex text-white border-0"
+                style={{ backgroundColor: "#ff5e0c" }}
                 onClick={() => handleNav("#contacto")}
               >
                 Cotizar ahora

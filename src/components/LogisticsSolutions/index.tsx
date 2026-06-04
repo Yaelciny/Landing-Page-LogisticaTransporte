@@ -55,10 +55,16 @@ export default function LogisticsSolutions() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-background/5 p-6 rounded-2xl border border-background/5 hover:border-primary transition-all group hover:-translate-y-1 hover:shadow-md"
+                  className="bg-background/5 p-6 rounded-2xl border border-background/5 transition-all group hover:-translate-y-1 hover:shadow-md"
+                  style={{ '--hover-border': '#ff5e0c' } as React.CSSProperties}
+                  onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#ff5e0c')}
+                  onMouseLeave={(e) => (e.currentTarget.style.borderColor = '')}
                 >
-                  <div className="w-16 h-16 bg-background/20 border border-background/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:icon-container-base transition-all shadow-sm">
-                    <Icon size={32} className="text-background/70" />
+                  <div
+                    className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all shadow-sm"
+                    style={{ backgroundColor: '#ff5e0c22', borderColor: '#ff5e0c33', border: '1px solid #ff5e0c33' }}
+                  >
+                    <Icon size={32} style={{ color: '#ff5e0c' }} />
                   </div>
                   <h4 className="text-xl font-bold text-background mb-2">
                     {item.title}

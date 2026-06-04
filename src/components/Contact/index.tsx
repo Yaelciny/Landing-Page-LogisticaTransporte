@@ -44,7 +44,7 @@ export default function Contact() {
             <div className="space-y-6 mb-12">
               {/* Direccion */}
               <div className="flex items-start gap-4">
-                <div className="mt-1 p-3 bg-muted rounded-xl shrink-0 icon-container-base">
+                <div className="mt-1 p-3 rounded-xl shrink-0" style={{ backgroundColor: '#ff5e0c1a', color: '#ff5e0c' }}>
                   <MapPin size={24} />
                 </div>
                 <div>
@@ -59,7 +59,7 @@ export default function Contact() {
 
               {/* Telefono */}
               <div className="flex items-start gap-4">
-                <div className="mt-1 p-3 bg-muted rounded-xl shrink-0 icon-container-base">
+                <div className="mt-1 p-3 bg-muted rounded-xl shrink-0" style={{ backgroundColor: '#ff5e0c1a', color: '#ff5e0c' }}>
                   <Phone size={24} />
                 </div>
                 <div>
@@ -77,7 +77,7 @@ export default function Contact() {
 
               {/* Correo */}
               <div className="flex items-start gap-4">
-                <div className="mt-1 p-3 bg-muted rounded-xl shrink-0 icon-container-base">
+                <div className="mt-1 p-3 bg-muted rounded-xl shrink-0" style={{ backgroundColor: '#ff5e0c1a', color: '#ff5e0c' }}>
                   <Mail size={24} />
                 </div>
                 <div>
@@ -97,7 +97,8 @@ export default function Contact() {
             {/* Boton WhatsApp */}
             <a
               href={siteData.contact.whatsapp}
-              className="inline-flex items-center justify-center gap-2 w-full py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-colors shadow-md"
+              className="inline-flex items-center justify-center gap-2 w-full py-4 text-white font-bold rounded-xl transition-colors shadow-md hover:opacity-90"
+              style={{ backgroundColor: '#ff5e0c', boxShadow: '0 8px 32px -8px rgba(255,94,12,0.4)' }}
             >
               <MessageCircle size={24} />
               Cotizar por WhatsApp

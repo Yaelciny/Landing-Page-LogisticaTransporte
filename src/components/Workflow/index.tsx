@@ -41,7 +41,8 @@ export default function Workflow() {
             className="hidden md:block absolute top-[32px] left-[10%] right-[10%] h-[2px] -translate-y-1/2 z-0"
             style={{
               background:
-                "linear-gradient(90deg, transparent 0%, var(--border) 15%, var(--border) 85%, transparent 100%)",
+                "linear-gradient(90deg, transparent 0%, #ff5e0c 15%, #7a7a7a 50%, #ff5e0c 85%, transparent 100%)",
+              opacity: 0.4,
             }}
           />
 
@@ -50,7 +51,8 @@ export default function Workflow() {
             className="md:hidden absolute top-0 bottom-0 left-1/2 w-[2px] -translate-x-1/2 z-0"
             style={{
               background:
-                "linear-gradient(180deg, transparent 0%, var(--border) 5%, var(--border) 95%, transparent 100%)",
+                "linear-gradient(180deg, transparent 0%, #ff5e0c 5%, #7a7a7a 50%, #ff5e0c 95%, transparent 100%)",
+              opacity: 0.4,
             }}
           />
 
@@ -72,7 +74,18 @@ export default function Workflow() {
                 )}
 
                 {/* Circulo del paso */}
-                <div className="w-16 h-16 bg-background border-2 border-border rounded-full flex items-center justify-center text-2xl font-bold text-foreground mb-4 group-hover:border-foreground group-hover:shadow-md group-hover:scale-110 transition-all z-10 shadow-sm">
+                <div
+                  className="w-16 h-16 bg-background border-2 border-border rounded-full flex items-center justify-center text-2xl font-bold text-foreground mb-4 group-hover:shadow-md group-hover:scale-110 transition-all z-10 shadow-sm"
+                  style={{ '--hover-color': '#ff5e0c' } as React.CSSProperties}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#ff5e0c';
+                    e.currentTarget.style.color = '#ff5e0c';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '';
+                    e.currentTarget.style.color = '';
+                  }}
+                >
                   {step.num}
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-1">
