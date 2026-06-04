@@ -13,7 +13,8 @@ import sector2 from "@/assets/sectores/Industrial.webp";
 import sector3 from "@/assets/sectores/Comercializadora.webp";
 import sector4 from "@/assets/sectores/Logistica-fletes.webp";
 import sector5 from "@/assets/sectores/transporte.webp";
-import logo from "@/assets/logo/logo.png"
+import logo from "@/assets/logo/logo.webp"
+import logoblanco from "@/assets/logo/logoblanco.webp"
 
 
 // Datos principales del sitio - edita aqui los textos e iconos de la pagina
@@ -162,6 +163,7 @@ export interface FooterData {
 
 export interface SiteData {
   logo: StaticImageData;
+  logoblanco: StaticImageData;
   brand: Brand;
   siteName: string;
   siteDescription: string;
@@ -200,6 +202,7 @@ export const navLinks: NavLink[] = [
 // Objeto principal que agrupa todos los datos del sitio
 export const siteData: SiteData = {
   logo,
+  logoblanco,
   brand,
   siteName: brand.full,
   siteDescription:
@@ -447,13 +450,13 @@ export const siteData: SiteData = {
     title: "Contacto",
     subtitle: "Estamos listos para mover su operación.",
     infoTitle: "Información de Contacto",
-    address: "Hey Hey Studio, León, Guanajuato",
-    phone: "477 123 4567",
-    email: "ejemplo@gmail.com",
+    address: "Blvd. Brisa de Sarandi #315 Col. Brisas del Campestre CP 37669 León, Gto.",
+    phone: "479 428 8704",
+    email: "ventas@lsolgoblal.com.mx",
     whatsapp: "#",
     mapPlaceholder: "Mapa de Google Maps",
     mapUrl:
-      "https://www.google.com/maps?q=México&output=embed",
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.390133063356!2d-101.7658604883323!3d21.17665548042865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bc6dcb105c5c7%3A0x752b84dba73e2af4!2sBlvd.%20Brisa%20de%20Sarand%C3%AD%20315%2C%2037669%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1779818585533!5m2!1ses-419!2smx',
   },
   footer: {
     copyright: `© ${new Date().getFullYear()} Especialistas en Transportes del Bajío. Todos los derechos reservados.`,

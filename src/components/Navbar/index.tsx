@@ -43,7 +43,7 @@ export default function Navbar() {
                   width={100}
                   height={100}
                   priority
-                  className="object-contain"
+                  style={{ width: 'auto', height: 'auto', maxHeight: '48px' }}
                 />
               </div>
             </motion.a>

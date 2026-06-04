@@ -29,7 +29,7 @@ export default function HeroCarousel() {
   return (
     <section
       id="inicio"
-      className="relative h-dvh overflow-hidden"
+      className="relative h-dvh overflow-hidden bg-foreground"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

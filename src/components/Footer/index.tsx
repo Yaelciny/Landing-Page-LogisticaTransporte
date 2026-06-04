@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Truck, Mail, Phone, MapPin } from "lucide-react";
 import { siteData } from "@/data/nat";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -18,17 +19,14 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="p-2 rounded-lg text-white" style={{ backgroundColor: '#ff5e0c' }}>
-                <Truck size={24} />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-sm leading-tight uppercase tracking-wider text-background">
-                  {siteData.brand.name}
-                </span>
-                <span className="text-xs tracking-widest uppercase text-background/60">
-                  {siteData.brand.suffix}
-                </span>
-              </div>
+              <Image
+                src={siteData.logoblanco}
+                alt={siteData.brand.name}
+                width={120}
+                height={120}
+                priority
+                style={{ width: 'auto', height: 'auto', maxHeight: '56px' }}
+              />
             </div>
             <p className="text-sm text-background/60">{siteData.siteDescription}</p>
           </motion.div>
@@ -105,7 +103,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Contacto</h4>
             <div className="space-y-3 text-sm text-background/70">
               <div className="flex items-center gap-2">
-                <MapPin className="size-4" style={{ color: '#ff5e0c' }} />
+                <MapPin className="size-8" style={{ color: '#ff5e0c' }} />
                 <p>{siteData.contact.address}</p>
               </div>
               <div className="flex items-center gap-2">
