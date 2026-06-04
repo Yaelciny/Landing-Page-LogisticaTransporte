@@ -5,6 +5,13 @@ import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { siteData } from "@/data/nat";
 
 export default function Contact() {
+  // Construir la URL de WhatsApp con mensaje predefinido (misma logica que WhatsAppFloat)
+  const phone = siteData.contact.phone.replace(/\s/g, "");
+  const whatsappUrl =
+    siteData.contact.whatsapp !== "#"
+      ? siteData.contact.whatsapp
+      : `https://wa.me/52${phone}?text=${encodeURIComponent("Hola, me interesa cotizar un servicio de transporte.")}`;
+
   return (
     <section id="contacto" className="section-padding bg-muted">
       <div className="container">
@@ -96,7 +103,9 @@ export default function Contact() {
 
             {/* Boton WhatsApp */}
             <a
-              href={siteData.contact.whatsapp}
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 w-full py-4 text-white font-bold rounded-xl transition-colors shadow-md hover:opacity-90"
               style={{ backgroundColor: '#ff5e0c', boxShadow: '0 8px 32px -8px rgba(255,94,12,0.4)' }}
             >

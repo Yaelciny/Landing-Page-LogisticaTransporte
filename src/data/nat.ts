@@ -452,7 +452,7 @@ export const siteData: SiteData = {
     infoTitle: "Información de Contacto",
     address: "Blvd. Brisa de Sarandi #315 Col. Brisas del Campestre CP 37669 León, Gto.",
     phone: "479 428 8704",
-    email: "ventas@lsolgoblal.com.mx",
+    email: "ventas@etbtrucking.com.mx",
     whatsapp: "#",
     mapPlaceholder: "Mapa de Google Maps",
     mapUrl:
